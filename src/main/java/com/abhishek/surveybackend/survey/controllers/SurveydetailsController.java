@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/surveytable")
 public class SurveydetailsController {
@@ -31,6 +31,7 @@ public class SurveydetailsController {
             return new ResponseEntity<Surveydetails>(HttpStatus.NOT_FOUND);
         }
     }
+    @CrossOrigin
     @PostMapping("/add")
     public void add(@RequestBody Surveydetails surveydetails) {
         surveydetailsService.saveUser(surveydetails);
